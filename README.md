@@ -165,7 +165,6 @@ const responseTime = performance.now() - startTime;
 ## 📚 Documentation
 
 - 📝 [CHANGELOG.md](CHANGELOG.md) - Historique des versions
-- 🤝 [CONTRIBUTING.md](CONTRIBUTING.md) - Guide de contribution
 - 🔒 [SECURITY.md](SECURITY.md) - Politique de sécurité
 
 ## 🎓 Compétences Démontrées
