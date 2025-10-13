@@ -234,7 +234,6 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 - 🔗 GitHub: [@ImadAAmara1](https://github.com/ImadAAmara1)
 - 📧 Email: imadamara14@gmail.com
-- 💼 LinkedIn: [Votre LinkedIn](https://linkedin.com/in/votre-profil)
 
 ## 🙏 Remerciements
 
