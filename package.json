@@ -1,7 +1,25 @@
 {
   "name": "edu-api-monitor",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Tableau de bord de monitoring de performance d'API en temps réel avec React, D3.js et Tailwind CSS",
+  "author": "Imad A Amara <imadamara14@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ImadAAmara1/edu-api-monitor.git"
+  },
+  "keywords": [
+    "react",
+    "d3js",
+    "tailwindcss",
+    "dashboard",
+    "monitoring",
+    "data-visualization",
+    "wikipedia-api",
+    "vite",
+    "performance"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",

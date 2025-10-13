@@ -1,11 +1,14 @@
 # 📊 EduAPI Monitor
 
-> Tableau de bord de monitoring de performance d'API en temps réel pour plateformes éducatives
+> Tableau de bord de monitoring de performance d'API en temps réel
 
-[![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react)](https://reactjs.org/)
-[![D3.js](https://img.shields.io/badge/D3.js-7.9-F9A03C?logo=d3.js)](https://d3js.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite)](https://vitejs.dev/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://imadaamara1.github.io/edu-api-monitor/)
+[![GitHub](https://img.shields.io/github/license/ImadAAmara1/edu-api-monitor?style=for-the-badge)](LICENSE)
+[![Build](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/ImadAAmara1/edu-api-monitor/actions)
+[![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react&style=flat-square)](https://reactjs.org/)
+[![D3.js](https://img.shields.io/badge/D3.js-7.9-F9A03C?logo=d3.js&style=flat-square)](https://d3js.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?logo=tailwind-css&style=flat-square)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite&style=flat-square)](https://vitejs.dev/)
 
 ## 🎯 Aperçu du Projet
 
@@ -32,7 +35,7 @@ EduAPI Monitor est un tableau de bord interactif qui surveille et visualise les 
 
 ```bash
 # Cloner le repository
-git clone https://github.com/votre-username/edu-api-monitor.git
+git clone https://github.com/ImadAAmara1/edu-api-monitor.git
 
 # Naviguer dans le dossier
 cd edu-api-monitor
@@ -159,11 +162,11 @@ const responseTime = performance.now() - startTime;
 - Rendu conditionnel pour éviter les calculs inutiles
 - Nettoyage D3.js avant chaque re-render
 
-## 📚 Documentation Complémentaire
+## 📚 Documentation
 
-- 📖 [PRESENTATION.md](PRESENTATION.md) - Guide de présentation détaillé
-- 🎤 [INTERVIEW_GUIDE.md](INTERVIEW_GUIDE.md) - Questions/réponses pour entretien
 - 📝 [CHANGELOG.md](CHANGELOG.md) - Historique des versions
+- 🤝 [CONTRIBUTING.md](CONTRIBUTING.md) - Guide de contribution
+- 🔒 [SECURITY.md](SECURITY.md) - Politique de sécurité
 
 ## 🎓 Compétences Démontrées
 
@@ -227,10 +230,11 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ## 👤 Auteur
 
-**Votre Nom**
+**Imad A Amara**
 
-- GitHub: [ImadAAmara1](https://github.com/ImadAAmara1)
-- Email: imadamara14@gmail.com
+- 🔗 GitHub: [@ImadAAmara1](https://github.com/ImadAAmara1)
+- 📧 Email: imadamara14@gmail.com
+- 💼 LinkedIn: [Votre LinkedIn](https://linkedin.com/in/votre-profil)
 
 ## 🙏 Remerciements
 
