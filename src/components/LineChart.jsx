@@ -7,8 +7,9 @@ const LineChart = ({ data }) => {
   useEffect(() => {
     if (!data || data.length === 0 || !svgRef.current) return;
 
-    const margin = { top: 20, right: 30, bottom: 40, left: 50 };
-    const width = 800 - margin.left - margin.right;
+    const containerWidth = svgRef.current.parentElement.offsetWidth;
+    const margin = { top: 20, right: 20, bottom: 40, left: 40 };
+    const width = Math.min(containerWidth - 40, 800) - margin.left - margin.right;
     const height = 300 - margin.top - margin.bottom;
 
     d3.select(svgRef.current).selectAll('*').remove();

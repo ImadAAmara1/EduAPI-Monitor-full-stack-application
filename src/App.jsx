@@ -69,9 +69,9 @@ function App() {
       </header>
 
       {/* MAIN */}
-      <div className="flex-1 flex relative">
+      <div className="flex-1 flex flex-col lg:flex-row relative">
         {/* SIDEBAR */}
-        <div className="w-72 bg-gray-50 shadow-sm p-3 flex flex-col gap-3 border-r border-gray-200 overflow-y-auto">
+        <div className="w-full lg:w-72 bg-gray-50 shadow-sm p-3 flex flex-col gap-3 lg:border-r border-gray-200 overflow-y-auto max-h-[500px] lg:max-h-none">
           <SearchPanel onSearch={performSearch} loading={loading} />
 
           <div className="bg-white rounded-lg border border-gray-200 p-3 shadow-sm flex-1 flex flex-col min-h-0">
@@ -183,7 +183,7 @@ function App() {
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col overflow-x-hidden">
           {/* GRAPH HEADER */}
           <div className="bg-white border-b border-gray-200 px-4 md:px-6 py-4">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">

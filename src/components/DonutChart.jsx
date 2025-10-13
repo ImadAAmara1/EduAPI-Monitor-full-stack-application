@@ -18,7 +18,8 @@ const DonutChart = ({ data }) => {
       { label: 'Lent (>300ms)', value: slow, color: '#ef4444' }
     ].filter(d => d.value > 0);
 
-    const width = 400;
+    const containerWidth = svgRef.current.parentElement.offsetWidth;
+    const width = Math.min(containerWidth - 40, 400);
     const height = 300;
     const radius = Math.min(width, height) / 2 - 20;
 
