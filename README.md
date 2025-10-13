@@ -207,7 +207,6 @@ const responseTime = performance.now() - startTime;
 
 ## 📈 Métriques du Projet
 
-- **Lignes de code** : ~800 lignes
 - **Composants React** : 6 composants
 - **Hooks personnalisés** : 1 (useApiMonitor)
 - **Services** : 1 (wikiApi)
@@ -230,7 +229,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ## 👤 Auteur
 
-**Imad A Amara**
+**Imad Amara**
 
 - 🔗 GitHub: [@ImadAAmara1](https://github.com/ImadAAmara1)
 - 📧 Email: imadamara14@gmail.com
