@@ -1,245 +1,284 @@
-# 📊 EduAPI Monitor
+# 🔥 EduAPI Monitor - Full Stack Firebase
 
-> Tableau de bord de monitoring de performance d'API en temps réel
+> Tableau de bord de monitoring d'API en temps réel avec React, D3.js et Firebase
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://imadaamara1.github.io/edu-api-monitor/)
-[![GitHub](https://img.shields.io/github/license/ImadAAmara1/edu-api-monitor?style=for-the-badge)](LICENSE)
-[![Build](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)](https://github.com/ImadAAmara1/edu-api-monitor/actions)
-[![React](https://img.shields.io/badge/React-19.1-61DAFB?logo=react&style=flat-square)](https://reactjs.org/)
-[![D3.js](https://img.shields.io/badge/D3.js-7.9-F9A03C?logo=d3.js&style=flat-square)](https://d3js.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-38B2AC?logo=tailwind-css&style=flat-square)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-7.1-646CFF?logo=vite&style=flat-square)](https://vitejs.dev/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://eduapi-monitor.web.app)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 
-## 🎯 Aperçu du Projet
+## 🌐 Démo Live
 
-EduAPI Monitor est un tableau de bord interactif qui surveille et visualise les performances de l'API Wikipedia en temps réel. Conçu dans un contexte éducatif, il permet d'analyser les temps de réponse, de catégoriser les recherches et de visualiser les tendances de performance.
+**🚀 Application :** https://eduapi-monitor.web.app
 
-### ✨ Fonctionnalités Principales
+---
 
-- 🔍 **Recherche en temps réel** sur Wikipedia API
-- 📊 **3 visualisations D3.js** interactives (Line, Bar, Donut)
-- ⏱️ **Mesure précise** des temps de réponse (performance.now())
-- 📈 **Historique intelligent** des 12 dernières recherches
-- 🎨 **Design professionnel** aux couleurs UM6P
-- 📱 **Responsive** et optimisé mobile
-- 🚀 **Performance** optimisée avec React hooks
+## 📊 Aperçu
 
-## 🚀 Démarrage Rapide
+Application full-stack qui surveille et visualise les performances de l'API Wikipedia en temps réel.
 
-### Prérequis
+### ✨ Fonctionnalités
 
-- Node.js 18+
-- npm ou yarn
+- 🔍 Recherche en temps réel sur Wikipedia
+- 📊 3 visualisations D3.js interactives (Line, Bar, Donut)
+- ⏱️ Mesure précise des temps de réponse
+- 💾 Sauvegarde persistante dans Firestore
+- 📈 Historique des 12 dernières recherches
+- 🎨 Design responsive (mobile-first)
+- 🔥 Backend serverless (Cloud Functions)
 
-### Installation
-
-```bash
-# Cloner le repository
-git clone https://github.com/ImadAAmara1/edu-api-monitor.git
-
-# Naviguer dans le dossier
-cd edu-api-monitor
-
-# Installer les dépendances
-npm install
-
-# Lancer en mode développement
-npm run dev
-```
-
-L'application sera accessible sur `http://localhost:5173`
-
-### Build pour Production
-
-```bash
-npm run build
-npm run preview
-```
+---
 
 ## 🏗️ Architecture
 
 ```
-src/
-├── components/          # Composants React réutilisables
-│   ├── LineChart.jsx   # Graphique temporel (D3.js)
-│   ├── BarChart.jsx    # Graphique par catégorie (D3.js)
-│   ├── DonutChart.jsx  # Répartition des performances (D3.js)
-│   ├── SearchPanel.jsx # Interface de recherche
-│   └── StatsCard.jsx   # Cartes de statistiques
-├── hooks/              # Hooks personnalisés
-│   └── useApiMonitor.js # Logique de monitoring
-├── services/           # Services API
-│   └── wikiApi.js      # Service Wikipedia
-├── utils/              # Utilitaires
-│   └── constants.js    # Constantes de configuration
-├── App.jsx             # Composant principal
-└── index.css           # Styles globaux
+Frontend (React + D3.js)
+        ↓
+Firebase Hosting (CDN Global)
+        ↓
+Cloud Functions (Backend Serverless)
+        ↓
+Firestore (Base de données NoSQL)
 ```
 
-## 🛠️ Technologies Utilisées
+---
+
+## 🛠️ Technologies
 
 ### Frontend
-
-- **React 19.1** - Framework UI avec hooks
+- **React 19** - Framework UI avec hooks
 - **D3.js 7.9** - Visualisations de données
-- **Tailwind CSS 4.1** - Framework CSS utility-first
+- **Tailwind CSS 4.1** - Styling moderne
 - **Axios** - Client HTTP
+- **Vite 7.1** - Build tool
 
-### Build & Dev Tools
+### Backend
+- **Firebase Cloud Functions** - Backend serverless
+- **Firestore** - Base de données NoSQL
+- **Node.js 22** - Runtime JavaScript
 
-- **Vite 7.1** - Build tool ultra-rapide
-- **ESLint** - Linter JavaScript
-- **PostCSS** - Transformation CSS
+### Déploiement
+- **Firebase Hosting** - CDN mondial
+- **Firebase CLI** - Outils de déploiement
 
-## 📊 Visualisations D3.js
+---
+
+## 🚀 Installation Locale
+
+### Prérequis
+- Node.js 18+
+- npm ou yarn
+- Compte Firebase
+
+### Étapes
+
+```bash
+# 1. Cloner le repository
+git clone https://github.com/ImadAAmara1/edu-api-monitor.git
+cd edu-api-monitor
+
+# 2. Installer les dépendances frontend
+npm install
+
+# 3. Installer les dépendances backend
+cd functions
+npm install
+cd ..
+
+# 4. Configurer Firebase
+firebase login
+firebase use --add
+
+# 5. Créer .env avec vos URLs Firebase
+echo "VITE_FIREBASE_URL=https://us-central1-VOTRE-PROJET.cloudfunctions.net" > .env
+
+# 6. Lancer en local
+npm run dev
+```
+
+---
+
+## 📡 API Endpoints
+
+### Cloud Functions
+
+**Base URL :** `https://us-central1-eduapi-monitor.cloudfunctions.net`
+
+| Endpoint | Méthode | Description |
+|----------|---------|-------------|
+| `/saveMetric` | POST | Sauvegarder une recherche |
+| `/getMetrics` | GET | Récupérer l'historique |
+| `/clearMetrics` | DELETE | Supprimer toutes les données |
+
+---
+
+## 📦 Structure du Projet
+
+```
+edu-api-monitor/
+├── functions/              # Backend (Cloud Functions)
+│   └── index.js           # API endpoints
+├── src/
+│   ├── components/        # Composants React
+│   │   ├── LineChart.jsx  # Graphique temporel
+│   │   ├── BarChart.jsx   # Graphique par catégorie
+│   │   ├── DonutChart.jsx # Répartition performances
+│   │   ├── SearchPanel.jsx
+│   │   └── StatsCard.jsx
+│   ├── hooks/
+│   │   └── useApiMonitor.js  # Hook personnalisé
+│   ├── services/
+│   │   ├── wikiApi.js        # Service Wikipedia
+│   │   └── firebaseApi.js    # Service Firebase
+│   ├── App.jsx
+│   └── main.jsx
+├── firebase.json          # Configuration Firebase
+├── firestore.rules        # Règles de sécurité
+└── package.json
+```
+
+---
+
+## 🗄️ Base de Données
+
+### Firestore Collection : `search_metrics`
+
+```javascript
+{
+  query: "React",           // Terme recherché
+  category: "Technology",   // Catégorie
+  responseTime: 245,        // Temps en ms
+  resultsCount: 10,         // Nombre de résultats
+  timestamp: Date           // Date/heure
+}
+```
+
+---
+
+## 🎨 Visualisations D3.js
 
 ### 1. LineChart - Évolution Temporelle
-
-Affiche les temps de réponse au fil du temps avec :
-
-- Échelle temporelle (scaleTime)
-- Axes dynamiques
-- Tooltips interactifs
-- Ligne orange UM6P
+Affiche les temps de réponse au fil du temps avec axes dynamiques et tooltips.
 
 ### 2. BarChart - Volume par Catégorie
-
-Compare le nombre de recherches par catégorie :
-
-- Échelle en bandes (scaleBand)
-- Barres interactives
-- Couleur UM6P cohérente
+Compare le nombre de recherches par catégorie avec barres interactives.
 
 ### 3. DonutChart - Répartition des Performances
+Visualise la distribution rapide/moyen/lent avec couleurs sémantiques.
 
-Visualise la distribution rapide/moyen/lent :
+---
 
-- Graphique en anneau (pie, arc)
-- Couleurs sémantiques (vert/orange/rouge)
-- Légende interactive
-- Texte central avec total
+## 🚀 Déploiement
 
-## 🎨 Design System
+### Déployer sur Firebase
 
-### Couleurs
+```bash
+# Build le frontend
+npm run build
 
-- **Primary** : #d7492a (Orange UM6P)
-- **Success** : #10b981 (Vert - Rapide)
-- **Warning** : #f59e0b (Orange - Moyen)
-- **Danger** : #ef4444 (Rouge - Lent)
+# Déployer tout (Functions + Hosting + Firestore)
+firebase deploy
 
-### Seuils de Performance
-
-- 🟢 **Rapide** : < 150ms
-- 🟠 **Moyen** : 150-300ms
-- 🔴 **Lent** : > 300ms
-
-## 💡 Concepts Techniques
-
-### Custom Hook - useApiMonitor
-
-```javascript
-const {
-  metrics, // Historique des requêtes
-  categoryData, // Données par catégorie
-  loading, // État de chargement
-  performSearch, // Fonction de recherche
-  clearMetrics, // Réinitialisation
-} = useApiMonitor();
+# Ou déployer séparément
+firebase deploy --only functions
+firebase deploy --only hosting
+firebase deploy --only firestore
 ```
 
-### Mesure de Performance
-
-```javascript
-const startTime = performance.now();
-const response = await axios.get(url);
-const responseTime = performance.now() - startTime;
-```
-
-### Optimisations React
-
-- `useCallback` pour mémoriser les fonctions
-- Rendu conditionnel pour éviter les calculs inutiles
-- Nettoyage D3.js avant chaque re-render
-
-## 📚 Documentation
-
-- 📝 [CHANGELOG.md](CHANGELOG.md) - Historique des versions
-- 🔒 [SECURITY.md](SECURITY.md) - Politique de sécurité
+---
 
 ## 🎓 Compétences Démontrées
 
 ### Frontend
+✅ React (Hooks, State Management, Components)  
+✅ D3.js (Scales, Axes, Interactivity)  
+✅ Tailwind CSS (Utility-first, Responsive)  
+✅ JavaScript ES6+ (Async/Await, Modules)
 
-✅ React (Hooks, State Management, Component Architecture)  
-✅ D3.js (Data Visualization, Scales, Axes, Interactivity)  
-✅ Tailwind CSS (Utility-first, Responsive Design)  
-✅ JavaScript ES6+ (Async/Await, Destructuring, Modules)
+### Backend
+✅ Firebase Cloud Functions (Serverless)  
+✅ Firestore (NoSQL Database)  
+✅ REST API Design  
+✅ CORS & Security
 
-### Architecture
+### DevOps
+✅ Firebase Hosting (CDN)  
+✅ CI/CD avec Firebase CLI  
+✅ Environment Variables  
+✅ Production Deployment
 
-✅ Séparation des préoccupations (Components/Hooks/Services)  
-✅ Custom Hooks pour la réutilisabilité  
-✅ Service Layer pour l'abstraction API  
-✅ Component-based architecture
+---
 
-### Bonnes Pratiques
+## 📚 Documentation
 
-✅ Code propre et lisible  
-✅ Nommage cohérent  
-✅ Structure de projet claire  
-✅ Performance monitoring  
-✅ Responsive design
+- 📖 [Guide d'Apprentissage](GUIDE_APPRENTISSAGE.md) - Comprendre le projet
+- 🔥 [Firebase Deployment](FIREBASE_DEPLOYMENT.md) - Guide de déploiement
+- 📝 [Changelog](CHANGELOG.md) - Historique des versions
+- 🔒 [Security](SECURITY.md) - Politique de sécurité
 
-## 🚀 Améliorations Futures
+---
 
-- [ ] Tests unitaires (Jest, React Testing Library)
-- [ ] Tests E2E (Cypress)
-- [ ] Export des données en CSV
-- [ ] Filtres temporels (heure, jour, semaine)
+## 💡 Améliorations Futures
+
+- [ ] Authentification utilisateur (Firebase Auth)
+- [ ] Export des données (CSV/PDF)
+- [ ] Filtres temporels (jour/semaine/mois)
 - [ ] Mode sombre
-- [ ] Système de cache (React Query)
-- [ ] Alertes pour performances dégradées
-- [ ] Backend pour persistance des données
-- [ ] Authentification utilisateur
-- [ ] Comparaison multi-APIs
+- [ ] Tests unitaires (Jest)
+- [ ] Notifications en temps réel
+- [ ] Dashboard administrateur
+- [ ] Multi-langues (i18n)
 
-## 📈 Métriques du Projet
+---
 
-- **Composants React** : 6 composants
-- **Hooks personnalisés** : 1 (useApiMonitor)
-- **Services** : 1 (wikiApi)
-- **Graphiques D3.js** : 3 visualisations
-- **Dépendances** : 4 principales (React, D3.js, Axios, Tailwind)
+## 📈 Métriques
+
+- **Composants React :** 6
+- **Cloud Functions :** 3
+- **Graphiques D3.js :** 3
+- **Lignes de code :** ~1200
+- **Performance :** < 2s temps de chargement
+- **Uptime :** 99.9% (Firebase SLA)
+
+---
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
+Les contributions sont bienvenues !
 
 1. Fork le projet
 2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
+3. Commit (`git commit -m 'Add AmazingFeature'`)
+4. Push (`git push origin feature/AmazingFeature`)
 5. Ouvrir une Pull Request
+
+---
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+MIT License - Voir [LICENSE](LICENSE)
+
+---
 
 ## 👤 Auteur
 
 **Imad Amara**
 
-- 🔗 GitHub: [@ImadAAmara1](https://github.com/ImadAAmara1)
+- 🌐 Live Demo: [eduapi-monitor.web.app](https://eduapi-monitor.web.app)
+- 💼 GitHub: [@ImadAAmara1](https://github.com/ImadAAmara1)
 - 📧 Email: imadamara14@gmail.com
+
+---
 
 ## 🙏 Remerciements
 
 - [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page) pour les données
+- [Firebase](https://firebase.google.com) pour l'infrastructure
 - [D3.js](https://d3js.org/) pour les visualisations
 - [React](https://reactjs.org/) pour le framework
-- [Tailwind CSS](https://tailwindcss.com/) pour le styling
+- [UM6P](https://um6p.ma) pour l'inspiration
 
 ---
 
-⭐ **Si ce projet vous a été utile, n'hésitez pas à lui donner une étoile !**
+⭐ **Si ce projet vous est utile, donnez-lui une étoile sur GitHub !**
+
+**Développé avec ❤️ pour UM6P**

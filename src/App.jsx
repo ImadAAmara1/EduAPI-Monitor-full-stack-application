@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useApiMonitor } from "./hooks/useApiMonitor";
 import SearchPanel from "./components/SearchPanel";
 import LineChart from "./components/LineChart";
@@ -11,9 +12,16 @@ function App() {
     categoryData,
     scatterData,
     loading,
+    totalSearches,
     performSearch,
     clearMetrics,
+    loadHistory,
   } = useApiMonitor();
+
+  // Charger l'historique au démarrage
+  useEffect(() => {
+    loadHistory();
+  }, [loadHistory]);
 
   const avgResponseTime =
     metrics.length > 0
