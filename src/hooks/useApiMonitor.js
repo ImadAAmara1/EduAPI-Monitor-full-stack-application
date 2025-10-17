@@ -34,6 +34,17 @@ export const useApiMonitor = () => {
           count
         }));
         setCategoryData(categoryArray);
+        
+        // Reconstruire scatterData à partir de l'historique
+        const scatterPoints = response.data
+          .filter(item => item.results_count > 0)
+          .slice(0, 30)
+          .map((item, index) => ({
+            size: (item.results_count || 1) * 1000,
+            responseTime: item.response_time || 0,
+            title: item.query || `Search ${index + 1}`
+          }));
+        setScatterData(scatterPoints);
       }
     } catch (error) {
       console.error('Erreur chargement historique:', error.message);

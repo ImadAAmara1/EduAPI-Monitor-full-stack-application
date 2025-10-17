@@ -4,6 +4,14 @@ Toutes les modifications notables de ce projet seront documentées dans ce fichi
 
 ---
 
+## [1.2.1] - 2024-01-XX
+
+### 🐛 Corrigé
+- **Points de données** : Reconstruction du scatterData depuis Firebase au refresh
+- Affichage correct des statistiques après actualisation de la page
+
+---
+
 ## [1.2.0] - 2024-01-XX
 
 ### ✨ Ajouté
