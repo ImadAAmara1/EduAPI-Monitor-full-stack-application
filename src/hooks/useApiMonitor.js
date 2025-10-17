@@ -12,15 +12,28 @@ export const useApiMonitor = () => {
   // Charger l'historique au démarrage
   const loadHistory = useCallback(async () => {
     try {
-      const response = await firebaseApi.getMetrics(12);
+      const response = await firebaseApi.getMetrics(50);
       if (response.success) {
         const history = response.data.map(item => ({
           time: new Date(item.timestamp),
-          responseTime: item.response_time,
-          query: item.query
+          responseTime: item.response_time || 0,
+          query: item.query,
+          category: item.category
         }));
         setMetrics(history.reverse());
         setTotalSearches(response.count);
+        
+        // Reconstruire categoryData à partir de l'historique
+        const categories = {};
+        response.data.forEach(item => {
+          const cat = item.category || 'General';
+          categories[cat] = (categories[cat] || 0) + 1;
+        });
+        const categoryArray = Object.entries(categories).map(([category, count]) => ({
+          category,
+          count
+        }));
+        setCategoryData(categoryArray);
       }
     } catch (error) {
       console.error('Erreur chargement historique:', error.message);

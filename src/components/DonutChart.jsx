@@ -8,9 +8,9 @@ const DonutChart = ({ data }) => {
     if (!data || data.length === 0 || !svgRef.current) return;
 
     // Calculer les catégories de performance
-    const fast = data.filter(d => d.responseTime < 150).length;
-    const medium = data.filter(d => d.responseTime >= 150 && d.responseTime < 300).length;
-    const slow = data.filter(d => d.responseTime >= 300).length;
+    const fast = data.filter(d => d.responseTime && d.responseTime < 150).length;
+    const medium = data.filter(d => d.responseTime && d.responseTime >= 150 && d.responseTime < 300).length;
+    const slow = data.filter(d => d.responseTime && d.responseTime >= 300).length;
 
     const performanceData = [
       { label: 'Rapide (<150ms)', value: fast, color: '#10b981' },
@@ -64,6 +64,16 @@ const DonutChart = ({ data }) => {
       })
       .append('title')
       .text(d => `${d.data.label}: ${d.data.value} requêtes (${((d.data.value / data.length) * 100).toFixed(1)}%)`);
+
+    // Ajouter les pourcentages sur chaque segment
+    arcs.append('text')
+      .attr('transform', d => `translate(${arc.centroid(d)})`)
+      .attr('text-anchor', 'middle')
+      .style('fill', 'white')
+      .style('font-size', '14px')
+      .style('font-weight', 'bold')
+      .style('pointer-events', 'none')
+      .text(d => `${((d.data.value / data.length) * 100).toFixed(1)}%`);
 
     // Texte central
     svg.append('text')

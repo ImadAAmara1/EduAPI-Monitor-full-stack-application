@@ -160,16 +160,29 @@ edu-api-monitor/
 Affiche les temps de réponse au fil du temps avec axes dynamiques et tooltips.
 
 ### 2. BarChart - Volume par Catégorie
-Compare le nombre de recherches par catégorie avec barres interactives.
+Compare le nombre de recherches par catégorie avec :
+- ✨ Couleurs différentes pour chaque catégorie
+- 📊 Légende interactive en bas du graphique
+- 🎯 Animation hover fluide
 
 ### 3. DonutChart - Répartition des Performances
-Visualise la distribution rapide/moyen/lent avec couleurs sémantiques.
+Visualise la distribution rapide/moyen/lent avec :
+- 🎨 Couleurs sémantiques (vert/orange/rouge)
+- 📈 Pourcentages affichés sur chaque segment
+- 💫 Animations interactives
 
 ---
 
 ## 🚀 Déploiement
 
-### Déployer sur Firebase
+### Méthode Rapide (Windows)
+
+```bash
+# Script automatique
+deploy.bat
+```
+
+### Méthode Manuelle
 
 ```bash
 # Build le frontend
@@ -178,11 +191,13 @@ npm run build
 # Déployer tout (Functions + Hosting + Firestore)
 firebase deploy
 
-# Ou déployer séparément
-firebase deploy --only functions
-firebase deploy --only hosting
-firebase deploy --only firestore
+# Push vers GitHub
+git add .
+git commit -m "🚀 Déploiement version 1.2.0"
+git push origin main
 ```
+
+📖 **Guide complet** : Voir [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 
 ---
 
@@ -234,10 +249,11 @@ firebase deploy --only firestore
 
 - **Composants React :** 6
 - **Cloud Functions :** 3
-- **Graphiques D3.js :** 3
-- **Lignes de code :** ~1200
+- **Graphiques D3.js :** 3 (avec couleurs et pourcentages)
+- **Lignes de code :** ~1500
 - **Performance :** < 2s temps de chargement
 - **Uptime :** 99.9% (Firebase SLA)
+- **Version :** 1.2.0
 
 ---
 
