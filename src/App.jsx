@@ -4,6 +4,7 @@ import SearchPanel from "./components/SearchPanel";
 import LineChart from "./components/LineChart";
 import BarChart from "./components/BarChart";
 import DonutChart from "./components/DonutChart";
+import ScatterPlot from "./components/ScatterPlot";
 import StatsCard from "./components/StatsCard";
 
 function App() {
@@ -182,30 +183,30 @@ function App() {
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-600">
-                    Rapide (&lt;150ms)
+                    Rapide (&lt;500ms)
                   </span>
                   <span className="text-xs font-bold text-green-700">
-                    {metrics.filter((m) => m.responseTime < 150).length}
+                    {metrics.filter((m) => m.responseTime < 500).length}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-600">
-                    Moyen (150-300ms)
+                    Moyen (500-1000ms)
                   </span>
                   <span className="text-xs font-bold text-orange-700">
                     {
                       metrics.filter(
-                        (m) => m.responseTime >= 150 && m.responseTime < 300
+                        (m) => m.responseTime >= 500 && m.responseTime < 1000
                       ).length
                     }
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-600">
-                    Lent (&gt;300ms)
+                    Lent (&gt;1000ms)
                   </span>
                   <span className="text-xs font-bold text-red-700">
-                    {metrics.filter((m) => m.responseTime >= 300).length}
+                    {metrics.filter((m) => m.responseTime >= 1000).length}
                   </span>
                 </div>
                 <div className="pt-2 mt-2 border-t border-gray-200">
@@ -345,8 +346,9 @@ function App() {
             {/* CHARTS */}
             <div className="space-y-5">
               <LineChart data={metrics} />
-              <BarChart data={categoryData} />
               <DonutChart data={metrics} />
+              <BarChart data={categoryData} />
+              <ScatterPlot data={scatterData} />
             </div>
           </div>
         </div>

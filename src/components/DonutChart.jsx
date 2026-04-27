@@ -8,14 +8,14 @@ const DonutChart = ({ data }) => {
     if (!data || data.length === 0 || !svgRef.current) return;
 
     // Calculer les catégories de performance
-    const fast = data.filter(d => d.responseTime && d.responseTime < 150).length;
-    const medium = data.filter(d => d.responseTime && d.responseTime >= 150 && d.responseTime < 300).length;
-    const slow = data.filter(d => d.responseTime && d.responseTime >= 300).length;
+    const fast = data.filter(d => d.responseTime && d.responseTime < 500).length;
+    const medium = data.filter(d => d.responseTime && d.responseTime >= 500 && d.responseTime < 1000).length;
+    const slow = data.filter(d => d.responseTime && d.responseTime >= 1000).length;
 
     const performanceData = [
-      { label: 'Rapide (<150ms)', value: fast, color: '#10b981' },
-      { label: 'Moyen (150-300ms)', value: medium, color: '#f59e0b' },
-      { label: 'Lent (>300ms)', value: slow, color: '#ef4444' }
+      { label: 'Rapide (<500ms)', value: fast, color: '#10b981' },
+      { label: 'Moyen (500-1000ms)', value: medium, color: '#f59e0b' },
+      { label: 'Lent (>1000ms)', value: slow, color: '#ef4444' }
     ].filter(d => d.value > 0);
 
     const containerWidth = svgRef.current.parentElement.offsetWidth;
@@ -111,15 +111,15 @@ const DonutChart = ({ data }) => {
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded" style={{backgroundColor: '#10b981'}}></div>
-              <span className="text-sm text-gray-700">Rapide (&lt;150ms)</span>
+              <span className="text-sm text-gray-700">Rapide (&lt;500ms)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded" style={{backgroundColor: '#f59e0b'}}></div>
-              <span className="text-sm text-gray-700">Moyen (150-300ms)</span>
+              <span className="text-sm text-gray-700">Moyen (500-1000ms)</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded" style={{backgroundColor: '#ef4444'}}></div>
-              <span className="text-sm text-gray-700">Lent (&gt;300ms)</span>
+              <span className="text-sm text-gray-700">Lent (&gt;1000ms)</span>
             </div>
           </div>
         </div>
